@@ -1,15 +1,14 @@
-
-variable "gce_project" {}
-variable "gce_region" { default= "europe-west1"}
-variable "gce_key_file" {default = "~/.gce/gce-terraform-key.json"}
-
-
+# Work if creadentals are given by env varible.
+# E.G. export GOOGLE_CREDENTIALS=$(cat ~/.gce/gce-terraform-key.json)
+#
 provider "google" {
-  credentials = "${file("${var.gce_key_file}")}"
   project     = "${var.gce_project}"
   region      = "${var.gce_region}"
 }
 
+resource "google_compute_address" "main_ip" {
+  name = "http"
+}
 
 resource "google_sql_database_instance" "master" {
   name = "test-instance"
