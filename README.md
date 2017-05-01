@@ -1,2 +1,3 @@
 # terraform_gcp
-GCE project
+
+At the moment example of terraform configuration for Google Cloud Platform.
