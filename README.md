@@ -12,3 +12,7 @@ export GOOGLE_CREDENTIALS=$(cat ~/.gce/gce-terraform-key.json)
 #Usage examples
 
 terraform plan -var-file=prod.tfvar
+
+terraform apply -var-file=prod.tfvar
+
+terraform destroy -var-file=prod.tfvar

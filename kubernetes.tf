@@ -3,7 +3,7 @@ variable "kube_pass" {}
 variable "gce_default_zone" {}
 
 ## Additional node pool
-resource "google_container_node_pool" "standard1" {
+resource "google_container_node_pool" "additional" {
   name       = "standard1-pool"
   zone       = "${var.gce_default_zone}"
   cluster    = "${google_container_cluster.primary.name}"
@@ -21,7 +21,6 @@ resource "google_container_node_pool" "standard1" {
     ]
   }
 }
-
 
 
 resource "google_container_cluster" "primary" {
